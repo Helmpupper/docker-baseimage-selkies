@@ -261,5 +261,5 @@ COPY --from=frontend /buildout /usr/share/selkies/www
 COPY --from=xvfb / /
 
 # ports and volumes
-EXPOSE 3000 3001
+EXPOSE 600 601
 VOLUME /config

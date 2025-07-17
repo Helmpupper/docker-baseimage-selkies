@@ -4,8 +4,8 @@
 NGINX_CONFIG=/etc/nginx/sites-available/default
 
 # user passed env vars
-CPORT="${CUSTOM_PORT:-3000}"
-CHPORT="${CUSTOM_HTTPS_PORT:-3001}"
+CPORT="${CUSTOM_PORT:-600}"
+CHPORT="${CUSTOM_HTTPS_PORT:-601}"
 CUSER="${CUSTOM_USER:-abc}"
 SFOLDER="${SUBFOLDER:-/}"
 
@@ -23,8 +23,8 @@ fi
 
 # modify nginx config
 cp /defaults/default.conf ${NGINX_CONFIG}
-sed -i "s/3000/$CPORT/g" ${NGINX_CONFIG}
-sed -i "s/3001/$CHPORT/g" ${NGINX_CONFIG}
+sed -i "s/600/$CPORT/g" ${NGINX_CONFIG}
+sed -i "s/601/$CHPORT/g" ${NGINX_CONFIG}
 sed -i "s|SUBFOLDER|$SFOLDER|g" ${NGINX_CONFIG}
 sed -i "s|REPLACE_HOME|$HOME|g" ${NGINX_CONFIG}
 s6-setuidgid abc mkdir -p $HOME/Desktop
